@@ -1,0 +1,17 @@
+# lock file
+!yarn.lock
+
+# Generated files
+node_modules/
+/dist
+
+# Dependency directory
+node_modules
+jspm_packages
+
+# Coverage directory used by nyc
+/coverage
+/.nyc_output
+
+# Documentation
+/gh-pages

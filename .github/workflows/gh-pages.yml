@@ -1,0 +1,26 @@
+name: Build and Deploy GitHub pages
+on:
+  release:
+    types:
+      - created
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Install 📦
+        uses: bahmutov/npm-install@v1
+        with:
+          install-command: yarn --frozen-lockfile
+          useRollingCache: true
+
+      - name: Build 🏗️
+        run: yarn build-gh-pages
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          branch: gh-pages
+          folder: gh-pages
