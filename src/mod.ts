@@ -20,12 +20,12 @@ const DESCENDING = 'prev';
 
 const upTo = <T>(ub: T) => IDBKeyRange.upperBound(ub, true);
 
-type Expiry = Date;
-type Access = Date;
+export type Expiry = Date;
+export type Access = Date;
 
-type IDBValidKey = number | string | Date | BufferSource | IDBValidKey[];
+export type IDBValidKey = number | string | Date | BufferSource | IDBValidKey[];
 
-interface Fields<V> {
+export interface Fields<V> {
 	[VALUE]: V;
 	[EXPIRY]: Expiry;
 }
@@ -35,7 +35,7 @@ export interface Value<K, V> extends Fields<V> {
 	[ACCESS]: Access;
 }
 
-interface Schema<K extends IDBValidKey, V> extends DBSchema {
+export interface Schema<K extends IDBValidKey, V> extends DBSchema {
 	[STORE]: {
 		key: K;
 		value: Value<K, V>;
@@ -46,14 +46,14 @@ interface Schema<K extends IDBValidKey, V> extends DBSchema {
 	};
 }
 
-type IndexedField<K extends IDBValidKey, V> = keyof Schema<
+export type IndexedField<K extends IDBValidKey, V> = keyof Schema<
 	K,
 	V
 >[typeof STORE]['indexes'];
 
-type DB<K extends IDBValidKey, V> = IDBPDatabase<Schema<K, V>>;
+export type DB<K extends IDBValidKey, V> = IDBPDatabase<Schema<K, V>>;
 
-interface Metadata {
+export interface Metadata {
 	[EXPIRY]: Expiry;
 	[ACCESS]?: Access;
 }
@@ -304,7 +304,7 @@ export class IndexedDBPersistedLRUCache<K extends IDBValidKey, V> {
 	}
 }
 
-interface CacheOptions {
+export interface CacheOptions {
 	dbName?: string;
 	dbVersion?: number;
 	maxCount: number;
