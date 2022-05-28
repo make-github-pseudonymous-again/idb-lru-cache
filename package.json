@@ -1,7 +1,7 @@
 {
   "name": "idb-lru-cache",
   "description": "IndexedDB-based persisting LRU cache for the browser",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "AGPL-3.0",
   "author": "make-github-pseudonymous-again",
   "homepage": "https://make-github-pseudonymous-again.github.io/idb-lru-cache",
