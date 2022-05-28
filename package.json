@@ -60,7 +60,7 @@
     "release": "np --message ':hatching_chick: release: Bumping to v%s.'",
     "tc": "tsc --noEmit",
     "tc:watch": "yarn tc --noErrorTruncation --watch",
-    "test": "aba test"
+    "test": "aba test --timeout 30s"
   },
   "dependencies": {
     "idb": "^7.0.1"
