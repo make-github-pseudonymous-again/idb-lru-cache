@@ -1,0 +1,219 @@
+{
+  "name": "idb-lru-cache",
+  "description": "IndexedDB-based persisting LRU cache for the browser",
+  "version": "0.0.0",
+  "license": "AGPL-3.0",
+  "author": "make-github-pseudonymous-again",
+  "homepage": "https://make-github-pseudonymous-again.github.io/idb-lru-cache",
+  "repository": {
+    "url": "https://github.com/make-github-pseudonymous-again/idb-lru-cache",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/make-github-pseudonymous-again/idb-lru-cache/issues"
+  },
+  "keywords": [
+    "browser",
+    "cache",
+    "database",
+    "db",
+    "idb",
+    "indexed",
+    "least",
+    "lru",
+    "recently",
+    "used"
+  ],
+  "sideEffects": false,
+  "type": "module",
+  "source": "src/mod.ts",
+  "types": "dist/mod.d.ts",
+  "main": "dist/mod.cjs",
+  "module": "dist/mod.mjs",
+  "exports": {
+    "require": "./dist/mod.cjs",
+    "import": "./dist/mod.mjs",
+    "default": "./dist/mod.modern.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "NODE_ENV=production microbundle -f modern,esm,cjs  && cp -l dist/src/mod.d.ts dist/mod.d.ts",
+    "build-docs": "typedoc src/mod.ts",
+    "build-gh-pages": "yarn build-docs --out gh-pages",
+    "commit-msg": "commitlint --edit",
+    "cover": "NODE_ENV=cover c8 --all --src src --reporter lcov --reporter text-summary --reporter text yarn test",
+    "install-hooks": "husky install",
+    "lint": "xo",
+    "lint-and-fix": "xo --fix",
+    "lint-config": "fixpack --dryRun",
+    "lint-config-and-fix": "fixpack || fixpack",
+    "postinstall": "yarn install-hooks",
+    "postpack": "pinst --enable",
+    "precommit": "lint-staged",
+    "prepack": "pinst --disable",
+    "prepare": "yarn build",
+    "release": "np --message ':hatching_chick: release: Bumping to v%s.'",
+    "tc": "tsc --noEmit",
+    "tc:watch": "yarn tc --noErrorTruncation --watch",
+    "test": "aba test"
+  },
+  "dependencies": {
+    "idb": "^7.0.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "17.0.1",
+    "@js-library/commitlint-config": "0.0.4",
+    "@types/chai": "4.3.0",
+    "babel-plugin-transform-remove-console": "6.9.4",
+    "babel-plugin-unassert": "3.2.0",
+    "babel-preset-power-assert": "3.0.0",
+    "c8": "7.11.0",
+    "chai": "4.3.6",
+    "fixpack": "4.0.0",
+    "husky": "7.0.4",
+    "lint-staged": "12.3.7",
+    "microbundle": "0.14.2",
+    "np": "7.6.1",
+    "pinst": "3.0.0",
+    "power-assert": "1.6.1",
+    "seedrandom": "3.0.5",
+    "tap-dot": "2.0.0",
+    "tslib": "2.3.1",
+    "typedoc": "0.22.15",
+    "typedoc-plugin-coverage": "1.0.2",
+    "typescript": "4.6.2",
+    "xn--mxaac": "0.1.1",
+    "xo": "0.48.0"
+  },
+  "babel": {
+    "sourceMaps": true,
+    "plugins": [
+      [
+        "transform-remove-console",
+        {
+          "exclude": [
+            "log",
+            "error",
+            "warn"
+          ]
+        }
+      ]
+    ],
+    "env": {
+      "debug": {
+        "sourceMaps": "both",
+        "presets": [
+          "babel-preset-power-assert"
+        ],
+        "plugins": [
+          [
+            "transform-remove-console",
+            {
+              "exclude": [
+                "debug",
+                "log",
+                "error",
+                "warn"
+              ]
+            }
+          ]
+        ]
+      },
+      "test": {
+        "sourceMaps": "both",
+        "presets": [
+          "babel-preset-power-assert"
+        ]
+      },
+      "cover": {
+        "sourceMaps": "both",
+        "presets": [
+          "babel-preset-power-assert"
+        ]
+      },
+      "development": {
+        "presets": [
+          [
+            "@babel/preset-env",
+            {
+              "targets": [
+                "defaults",
+                "maintained node versions"
+              ]
+            }
+          ],
+          "babel-preset-power-assert"
+        ]
+      },
+      "production": {
+        "presets": [
+          [
+            "@babel/preset-env",
+            {
+              "targets": [
+                "defaults",
+                "maintained node versions"
+              ]
+            }
+          ]
+        ],
+        "plugins": [
+          "babel-plugin-unassert"
+        ]
+      }
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn lint-and-fix"
+    ],
+    "package.json": [
+      "yarn lint-config-and-fix"
+    ]
+  },
+  "prettier": {
+    "trailingComma": "all"
+  },
+  "xo": {
+    "prettier": true,
+    "plugins": [
+      "unicorn"
+    ],
+    "env": "browser",
+    "rules": {
+      "import/extensions": [
+        "error",
+        "never"
+      ],
+      "unicorn/filename-case": "off",
+      "unicorn/prefer-node-protocol": "off",
+      "no-bitwise": "off",
+      "@typescript-eslint/ban-types": "off"
+    },
+    "overrides": [
+      {
+        "files": [
+          "src/**"
+        ],
+        "rules": {
+          "@typescript-eslint/naming-convention": "off",
+          "unicorn/error-message": "off",
+          "unicorn/prefer-math-trunc": "off"
+        }
+      },
+      {
+        "files": [
+          "test/**"
+        ],
+        "rules": {
+          "no-await-in-loop": "off"
+        }
+      }
+    ]
+  }
+}
