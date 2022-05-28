@@ -16,6 +16,9 @@ jobs:
           install-command: yarn --frozen-lockfile --ignore-scripts
           useRollingCache: true
 
+      - name: Install browsers 🧪
+        run: npx playwright install
+
       - name: Test and record coverage 🔬
         run: yarn cover
 
