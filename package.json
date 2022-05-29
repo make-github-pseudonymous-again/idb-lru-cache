@@ -86,7 +86,7 @@
     "tslib": "2.4.0",
     "typedoc": "0.22.15",
     "typedoc-plugin-coverage": "1.0.2",
-    "typescript": "4.6.2",
+    "typescript": "4.7.2",
     "xn--mxaac": "0.1.1",
     "xo": "0.48.0"
   },
