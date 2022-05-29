@@ -88,7 +88,7 @@
     "typedoc-plugin-coverage": "1.0.2",
     "typescript": "4.7.2",
     "xn--mxaac": "0.1.1",
-    "xo": "0.48.0"
+    "xo": "0.49.0"
   },
   "babel": {
     "sourceMaps": true,
