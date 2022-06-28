@@ -85,7 +85,7 @@
     "tap-dot": "2.0.0",
     "tslib": "2.4.0",
     "typedoc": "0.23.2",
-    "typedoc-plugin-coverage": "1.0.2",
+    "typedoc-plugin-coverage": "2.0.0",
     "typescript": "4.7.4",
     "xn--mxaac": "0.1.1",
     "xo": "0.49.0"
