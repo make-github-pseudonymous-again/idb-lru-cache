@@ -1,6 +1,7 @@
 import test from 'xn--mxaac';
 
-import {cache, Value} from '../src/mod';
+import {cache} from '../src/mod';
+import type {Value} from '../src/mod';
 import {assert, throws} from './_fixtures';
 
 const beginningOfTime = () => new Date('2000-01-01');

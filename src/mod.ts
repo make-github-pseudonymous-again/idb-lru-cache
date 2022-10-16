@@ -1,9 +1,12 @@
-import {
+import type {
 	IDBPCursorWithValue,
 	IDBPCursorWithValueIteratorValue,
 	IDBPObjectStore,
 } from 'idb';
-import {openDB, DBSchema, IDBPDatabase} from 'idb/with-async-ittr';
+// eslint-disable-next-line n/file-extension-in-import
+import type {DBSchema, IDBPDatabase} from 'idb/with-async-ittr';
+// eslint-disable-next-line n/file-extension-in-import
+import {openDB} from 'idb/with-async-ittr';
 import {assert} from './deps';
 
 const DEFAULT_DB_NAME = 'cache-lru';
@@ -25,17 +28,17 @@ export type Access = Date;
 
 export type IDBValidKey = number | string | Date | BufferSource | IDBValidKey[];
 
-export interface Fields<V> {
+export type Fields<V> = {
 	[VALUE]: V;
 	[EXPIRY]: Expiry;
-}
+};
 
-export interface Value<K, V> extends Fields<V> {
+export type Value<K, V> = Fields<V> & {
 	[KEY]: K;
 	[ACCESS]: Access;
-}
+};
 
-export interface Schema<K extends IDBValidKey, V> extends DBSchema {
+export type Schema<K extends IDBValidKey, V> = DBSchema & {
 	[STORE]: {
 		key: K;
 		value: Value<K, V>;
@@ -44,7 +47,7 @@ export interface Schema<K extends IDBValidKey, V> extends DBSchema {
 			[ACCESS]: Access;
 		};
 	};
-}
+};
 
 export type IndexedField<K extends IDBValidKey, V> = keyof Schema<
 	K,
@@ -53,10 +56,10 @@ export type IndexedField<K extends IDBValidKey, V> = keyof Schema<
 
 export type DB<K extends IDBValidKey, V> = IDBPDatabase<Schema<K, V>>;
 
-export interface Metadata {
+export type Metadata = {
 	[EXPIRY]: Expiry;
 	[ACCESS]?: Access;
-}
+};
 
 const deleteN = async <K extends IDBValidKey, V>(
 	count: number,
@@ -304,11 +307,11 @@ export class IndexedDBPersistedLRUCache<K extends IDBValidKey, V> {
 	}
 }
 
-export interface CacheOptions {
+export type CacheOptions = {
 	dbName?: string;
 	dbVersion?: number;
 	maxCount: number;
-}
+};
 
 export const cache = <K extends IDBValidKey, V>({
 	dbName = DEFAULT_DB_NAME,
