@@ -15,3 +15,6 @@ jspm_packages
 
 # Documentation
 /gh-pages
+
+# lint-staged
+.lint-staged.tsconfig.json
