@@ -63,7 +63,7 @@
     "test": "aba test --timeout 30s"
   },
   "dependencies": {
-    "idb": "^7.1.0"
+    "idb": "^8.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "18.4.3",
