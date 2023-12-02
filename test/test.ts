@@ -1,5 +1,4 @@
 import test from 'xn--mxaac';
-
 import {cache} from '../src/mod';
 import type {Value} from '../src/mod';
 import {assert, throws} from './_fixtures';

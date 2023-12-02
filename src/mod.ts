@@ -3,9 +3,7 @@ import type {
 	IDBPCursorWithValueIteratorValue,
 	IDBPObjectStore,
 } from 'idb';
-// eslint-disable-next-line n/file-extension-in-import
 import type {DBSchema, IDBPDatabase} from 'idb/with-async-ittr';
-// eslint-disable-next-line n/file-extension-in-import
 import {openDB} from 'idb/with-async-ittr';
 import {assert} from './deps';
 
