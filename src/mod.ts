@@ -2,9 +2,10 @@ import type {
 	IDBPCursorWithValue,
 	IDBPCursorWithValueIteratorValue,
 	IDBPObjectStore,
+	DBSchema,
+	IDBPDatabase,
 } from 'idb';
-import type {DBSchema, IDBPDatabase} from 'idb/with-async-ittr';
-import {openDB} from 'idb/with-async-ittr';
+import {openDB} from 'idb';
 import {assert} from './deps';
 
 const DEFAULT_DB_NAME = 'cache-lru';
