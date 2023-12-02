@@ -16,7 +16,7 @@ See [docs](https://make-github-pseudonymous-again.github.io/idb-lru-cache/index.
 
 [![License](https://img.shields.io/github/license/make-github-pseudonymous-again/idb-lru-cache.svg)](https://raw.githubusercontent.com/make-github-pseudonymous-again/idb-lru-cache/main/LICENSE)
 [![Version](https://img.shields.io/npm/v/idb-lru-cache.svg)](https://www.npmjs.org/package/idb-lru-cache)
-[![Tests](https://img.shields.io/github/workflow/status/make-github-pseudonymous-again/idb-lru-cache/ci?event=push&label=tests)](https://github.com/make-github-pseudonymous-again/idb-lru-cache/actions/workflows/ci.yml?query=branch:main)
+[![Tests](https://img.shields.io/github/actions/workflow/status/make-github-pseudonymous-again/idb-lru-cache/ci:cover.yml?branch=main&event=push&label=tests)](https://github.com/make-github-pseudonymous-again/idb-lru-cache/actions/workflows/ci:cover.yml?query=branch:main)
 [![Dependencies](https://img.shields.io/librariesio/github/make-github-pseudonymous-again/idb-lru-cache.svg)](https://github.com/make-github-pseudonymous-again/idb-lru-cache/network/dependencies)
 [![GitHub issues](https://img.shields.io/github/issues/make-github-pseudonymous-again/idb-lru-cache.svg)](https://github.com/make-github-pseudonymous-again/idb-lru-cache/issues)
 [![Downloads](https://img.shields.io/npm/dm/idb-lru-cache.svg)](https://www.npmjs.org/package/idb-lru-cache)
