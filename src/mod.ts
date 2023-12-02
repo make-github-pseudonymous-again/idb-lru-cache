@@ -3,9 +3,7 @@ import type {
 	IDBPCursorWithValueIteratorValue,
 	IDBPObjectStore,
 } from 'idb';
-// eslint-disable-next-line n/file-extension-in-import
 import type {DBSchema, IDBPDatabase} from 'idb/with-async-ittr';
-// eslint-disable-next-line n/file-extension-in-import
 import {openDB} from 'idb/with-async-ittr';
 import {assert} from './deps';
 
@@ -142,6 +140,7 @@ type CursorWithValue<
 
 export class IndexedDBPersistedLRUCache<K extends IDBValidKey, V> {
 	readonly #dbPromise: Promise<DB<K, V>>;
+	// eslint-disable-next-line @typescript-eslint/prefer-readonly
 	#maxCount: number;
 
 	constructor(dbPromise: Promise<DB<K, V>>, maxCount: number) {
