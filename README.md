@@ -6,13 +6,16 @@ IndexedDB-based persisting LRU cache for the browser.
 See [docs](https://make-github-pseudonymous-again.github.io/idb-lru-cache/index.html).
 
 
-> :building_construction: Caveat emptor! This is work in progress. Code may be
-> working. Documentation may be present. Coherence may be. Maybe.
-
-
 > :warning: Depending on your environment, the code may require
 > `regeneratorRuntime` to be defined, for instance by importing
 > [regenerator-runtime/runtime](https://www.npmjs.com/package/regenerator-runtime).
+
+```ts
+const lru = cache<string, number>({
+	dbName: 'cache-lru',
+	maxCount: 10,
+});
+```
 
 [![License](https://img.shields.io/github/license/make-github-pseudonymous-again/idb-lru-cache.svg)](https://raw.githubusercontent.com/make-github-pseudonymous-again/idb-lru-cache/main/LICENSE)
 [![Version](https://img.shields.io/npm/v/idb-lru-cache.svg)](https://www.npmjs.org/package/idb-lru-cache)
@@ -28,3 +31,8 @@ See [docs](https://make-github-pseudonymous-again.github.io/idb-lru-cache/index.
 [![Code technical debt](https://img.shields.io/codeclimate/tech-debt/make-github-pseudonymous-again/idb-lru-cache.svg)](https://codeclimate.com/github/make-github-pseudonymous-again/idb-lru-cache/trends/technical_debt)
 [![Documentation](https://make-github-pseudonymous-again.github.io/idb-lru-cache/coverage.svg)](https://make-github-pseudonymous-again.github.io/idb-lru-cache/modules.html)
 [![Package size](https://img.shields.io/bundlephobia/minzip/idb-lru-cache)](https://bundlephobia.com/result?p=idb-lru-cache)
+
+
+## :woman_teacher: API reference
+
+See [docs](https://make-github-pseudonymous-again.github.io/idb-lru-cache/classes/IndexedDBPersistedLRUCache.html).
