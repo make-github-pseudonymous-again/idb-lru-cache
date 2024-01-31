@@ -76,7 +76,7 @@
     "chai": "5.0.3",
     "fixpack": "4.0.0",
     "husky": "9.0.7",
-    "lint-staged": "15.2.0",
+    "lint-staged": "15.2.1",
     "microbundle": "0.15.1",
     "np": "9.2.0",
     "pinst": "3.0.0",
