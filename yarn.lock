@@ -8290,10 +8290,10 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
-typedoc-plugin-coverage@3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/typedoc-plugin-coverage/-/typedoc-plugin-coverage-3.0.0.tgz#10fd56faddc33360780e66e7158199f245dc859a"
-  integrity sha512-At1uOrwOQWCmzEdq3PLL0ztX0I93rG1CZTkILAVmh2p4L46MhS1vHTtZFccxNOFBKeuuHV3SB/jUQyVo4jzyxA==
+typedoc-plugin-coverage@3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/typedoc-plugin-coverage/-/typedoc-plugin-coverage-3.1.0.tgz#2848956f76e02f927f4c84e85d7ea00dd0e941c9"
+  integrity sha512-fxeJRrxQR3yM/aFZU7mOuatgRCztiMCbeNiCRVZKY6VNgOcVMC1HS+ZfZnlbLLteUOdeWleSQ6yntuipz5zi6A==
 
 typedoc@0.25.7:
   version "0.25.7"
