@@ -228,8 +228,7 @@
           },
           "warnOnUnassignedImports": true
         }
-      ],
-      "@typescript-eslint/ban-types": "off"
+      ]
     },
     "overrides": [
       {

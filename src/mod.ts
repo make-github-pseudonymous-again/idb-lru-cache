@@ -175,6 +175,7 @@ export class IndexedDBPersistedLRUCache<K extends IDBValidKey, V> {
 	async getCursor<M extends IDBTransactionMode>(
 		mode: M,
 		key: K,
+		// eslint-disable-next-line @typescript-eslint/ban-types
 	): Promise<CursorWithValue<K, V, M> | null> {
 		const store = await this.store(mode);
 		return store.openCursor(key);
