@@ -83,7 +83,7 @@
     "power-assert": "1.6.1",
     "seedrandom": "3.0.5",
     "tap-dot": "2.0.0",
-    "tslib": "2.6.2",
+    "tslib": "2.8.1",
     "typedoc": "0.25.12",
     "typedoc-plugin-coverage": "3.1.0",
     "typescript": "5.4.5",
