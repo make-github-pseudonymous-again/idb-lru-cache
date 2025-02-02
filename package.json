@@ -66,7 +66,7 @@
     "idb": "^8.0.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "19.2.1",
+    "@commitlint/cli": "19.7.1",
     "@js-library/commitlint-config": "0.0.4",
     "@types/chai": "4.3.14",
     "babel-plugin-transform-remove-console": "6.9.4",
